@@ -4,19 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "shopify theme dev --store https://test-418-computer-store.myshopify.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/polidario/Elizabeth.git"
+    "install_pack": "npm install",
+    "run": "npm run install_pack & shopify theme dev --store https://test-418-computer-store.myshopify.com --password RobloxIsCool"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/polidario/Elizabeth/issues"
-  },
-  "homepage": "https://github.com/polidario/Elizabeth#readme",
   "devDependencies": {
     "@shopify/cli": "^3.44.1",
     "@shopify/theme": "^3.44.1",
