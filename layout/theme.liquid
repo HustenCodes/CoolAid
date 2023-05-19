@@ -10,19 +10,44 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   
-  <script src="{{ 'application.js' | asset_url }}" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css">
+
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+  <script src="{{ 'application.js' | asset_url }}" defer></script>
 
   <style>
     [x-cloak] { display: none !important; }
   </style>
 </head>
 <body>
-
   {% section 'header' %}
 
   <main role="main">
     {{ content_for_layout }}
+        
+    <script>
+      // Horizontal Swiper
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
+            const swiper = new Swiper('.swiper', {
+                    direction: 'horizontal',
+
+                    pagination: {
+                        el: '.swiper-pagination'
+                    },
+
+                    navigation: {
+                        prevEl: '.swiper-button-prev',
+                        nextEl: '.swiper-button-next'
+                }
+            })
+
+            console.log("SWIPER READY")
+        } catch(e) { console.log("SwiperJS is not defined"); }
+      })
+    </script>
   </main>
 </body>
 </html>
