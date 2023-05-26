@@ -1,34 +1,52 @@
 <div class="my-6">
     <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
 
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <!-- <div class="max-w-6xl mx-auto"> -->
-            <div class="swiper-slide"><div class="flex flex-row justify-center shrink-0 gap-4">
-                {% for product in section.settings.featured_collection.products %}
-                    {% assign in_page_index = forloop.index | modulo: section.settings.number_of_products_per_page %}
-
-                    {% render 'product-card', product_product: product %}
-
-                    {% if in_page_index == 0 %}
-                    </div></div><div class="swiper-slide"><div class="flex flex-row justify-center shrink-0 gap-4"> {% comment %} A new page for the swiper {% endcomment %}
-                    {% endif %}
-    
-                {% else %}
-                    {% for item in (1..section.settings.number_of_products_to_show) %}
-                        {% render 'product-card-placeholder' %}
-                    {% endfor %}
+    {% if section.settings.featured_collection.products.size <= section.settings.number_of_products_per_page %}
+        <div class="flex flex-row justify-center shrink-0 gap-4">
+            {% for product in section.settings.featured_collection.products %}
+                {% render 'product-card', product_product: product %}
+            {% else %}
+                {% for item in (1..section.settings.number_of_products_to_show) %}
+                    {% render 'product-card-placeholder' %}
                 {% endfor %}
-
-            </div></div>
-            <!-- </div> -->
+            {% endfor %}
         </div>
-        
-        <div class="swiper-pagination"></div>
+    {% else %}
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- <div class="max-w-6xl mx-auto"> -->
+                
+                <div class="swiper-slide">
+                    <div class="flex flex-row justify-center shrink-0 gap-4">
+                    {% for product in section.settings.featured_collection.products %}
+                        {% assign in_page_index = forloop.index | modulo: section.settings.number_of_products_per_page %}
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
+                        {% render 'product-card', product_product: product %}
+
+                        {% if in_page_index == 0 %}
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="flex flex-row justify-center shrink-0 gap-4"> {% comment %} A new page for the swiper {% endcomment %}
+                        {% endif %}
+        
+                    {% else %}
+                        {% for item in (1..section.settings.number_of_products_to_show) %}
+                            {% render 'product-card-placeholder' %}
+                        {% endfor %}
+                    {% endfor %}
+
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+            
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    {% endif %}
 </div>
 
 
