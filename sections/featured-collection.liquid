@@ -1,4 +1,52 @@
-<div class="my-6">
+{% comment %} Mobile Swiper {% endcomment %}
+<div class="my-6 sm:block md:hidden">
+    <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
+
+    {% if section.settings.featured_collection.products.size <= 1 %}
+        <div class="flex flex-row justify-center shrink-0 gap-4">
+            {% for product in section.settings.featured_collection.products %}
+                {% render 'product-card', product_product: product %}
+            {% else %}
+                {% for item in (1..section.settings.number_of_products_to_show) %}
+                    {% render 'product-card-placeholder' %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- <div class="max-w-6xl mx-auto"> -->
+                
+                <div class="swiper-slide">
+                    <div class="flex flex-row justify-center shrink-0 gap-4">
+                    {% for product in section.settings.featured_collection.products %}
+
+                        {% render 'product-card', product_product: product %}
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="flex flex-row justify-center shrink-0 gap-4"> {% comment %} A new page for the swiper {% endcomment %}
+        
+                    {% else %}
+                        {% render 'product-card-placeholder' %}
+                    {% endfor %}
+
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+            
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    {% endif %}
+</div>
+
+{% comment %} Normal Devices {% endcomment %}
+<div class="my-6 hidden md:block">
     <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
 
     {% if section.settings.featured_collection.products.size <= section.settings.number_of_products_per_page %}

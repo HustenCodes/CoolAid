@@ -6,7 +6,7 @@
   "scripts": {
     "install_pack": "npm install",
     "shopify": "npm run install_pack & shopify theme dev --store https://test-418-computer-store.myshopify.com",
-    "tailwind": "tailwindcss -i ./src/index.css -o ./assets/application.css --watch"
+    "tailwind": "tailwindcss -i ./src/index.css -o ./assets/theme.css --watch"
   },
   "keywords": [],
   "author": "",

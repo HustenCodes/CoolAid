@@ -1,0 +1,41 @@
+<div class="my-6 flex flex-col">
+    <div class="flex flex-row justify-center shrink-0 gap-4">
+    {% for collection in section.settings.collection_list %}
+        {% assign column_index = forloop.index | modulo: section.settings.items_per_row %}
+
+        {% render 'collection-list-card', featured_collection: collection %}
+
+        {% if column_index == 0 %}
+    </div>
+    <div class="flex flex-row justify-center shrink-0 gap-4">
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Collections List",
+    "settings": [
+        {
+            "type": "range",
+            "id": "items_per_row",
+            "min": 2,
+            "max": 6,
+            "default": 4,
+            "label": "Max Items Per Row"
+        },
+        {
+            "type": "collection_list",
+            "id": "collection_list",
+            "label": "Collections To Show"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections List"
+        }
+    ]
+}
+{% endschema %}
