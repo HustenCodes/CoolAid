@@ -1,3 +1,7 @@
+{% assign products_per_page_float = section.settings.number_of_products_per_page | times: 1.0 %}
+{% assign page_count_decimal = section.settings.featured_collection.products.size | divided_by: products_per_page_float %}
+{% assign page_count = page_count_decimal | ceil %}
+
 {% comment %} Mobile Swiper {% endcomment %}
 <div class="my-6 sm:block md:hidden">
     <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
@@ -67,11 +71,12 @@
                 <div class="swiper-slide">
                     <div class="flex flex-row justify-center shrink-0 gap-4">
                     {% for product in section.settings.featured_collection.products %}
+                        {% assign current_page_number = forloop.index | divided_by: section.settings.number_of_products_per_page %}
                         {% assign in_page_index = forloop.index | modulo: section.settings.number_of_products_per_page %}
-
+                        
                         {% render 'product-card', product_product: product %}
 
-                        {% if in_page_index == 0 %}
+                        {% if in_page_index == 0 and page_count != current_page_number %}
                     </div>
                 </div>
                 <div class="swiper-slide">
