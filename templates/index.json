@@ -39,7 +39,10 @@
       "type": "collections-list",
       "settings": {
         "collection_list": [
-
+          "memory",
+          "motherboards",
+          "ssds",
+          "frontpage"
         ],
         "items_per_row": 4
       }
