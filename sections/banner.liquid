@@ -1,0 +1,64 @@
+{% assign overlay_opacity = section.settings.overlay_alpha | divided_by: 100.0 %}
+
+<div class="mb-3 w-5/6 m-auto">
+    {% for block in section.blocks %}
+        {% if block.type == "slide"%}
+            <div class="banner-max-height overflow-hidden flex items-center justify-center relative z-0">
+                <img 
+                    class = "w-full z-10"
+                    src = "{{ block.settings.image | image_url: width: 2048 }}"
+                    alt = "{{ block.settings.image.alt }}"
+                    loading="lazy"
+                >
+                <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    
+</div>
+
+{% schema %}
+{
+    "name": "Banner",
+    "settings": [
+        {
+            "type": "color_background",
+            "id": "overlay_color",
+            "label": "Overlay Color",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "overlay_alpha",
+            "label": "Overlay Alpha",
+            "min": 0,
+            "max": 100,
+            "default": 75
+        },
+        {
+            "type": "checkbox",
+            "id": "autoscroll",
+            "label": "Automaticly Scroll Banner",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image To Show"
+            }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner"
+        }
+    ]
+}
+{% endschema %}
