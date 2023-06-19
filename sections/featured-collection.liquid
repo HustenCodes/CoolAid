@@ -2,7 +2,7 @@
 {% assign page_count_decimal = section.settings.featured_collection.products.size | divided_by: products_per_page_float %}
 {% assign page_count = page_count_decimal | ceil %}
 
-{% comment %} Mobile Swiper {% endcomment %}
+<!-- Mobile Devices -->
 <div class="my-6 sm:block md:hidden">
     <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
 
@@ -49,7 +49,7 @@
     {% endif %}
 </div>
 
-{% comment %} Normal Devices {% endcomment %}
+<!-- Normal Devices -->
 <div class="my-6 hidden md:block">
     <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
 

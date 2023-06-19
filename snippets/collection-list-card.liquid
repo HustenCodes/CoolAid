@@ -1,17 +1,17 @@
-<div class="w-60 h-80 overflow-hidden">
-    <a href="{{ featured_collection.url }}">
-        <div class="h-60 bg-white overflow-hidden collection-card-clip flex items-center justify-center">
-                <img 
-                    class="w-1/2 m-auto object-cover"
-                    src="{{ featured_collection.featured_image | image_url: width: 240 }}"
-                    alt="{{ featured_collection.featured_image.alt }}"
-                    width="240" height="240"
-                    loading="lazy"
-                >
-        </div>
-    </a>
+<div> <!-- Fix for overflow bug -->
+    <div class="w-60 h-80 overflow-hidden">
+        <a href="{{ featured_collection.url }}" class="h-60 bg-white overflow-hidden collection-card-clip flex items-center justify-center">
+            <img 
+                class="w-1/2 m-auto object-cover"
+                src="{{ featured_collection.featured_image | image_url: width: 240 }}"
+                alt="{{ featured_collection.featured_image.alt }}"
+                width="240" height="240"
+                loading="lazy"
+            >
+        </a>
 
-    <a href="{{ featured_collection.url }}">
-        <p class="text-center">{{ featured_collection.title }}</p>
-    </a>
+        <a href="{{ featured_collection.url }}">
+            <p class="text-center">{{ featured_collection.title }}</p>
+        </a>
+    </div>
 </div>

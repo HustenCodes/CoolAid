@@ -1,18 +1,46 @@
-<div class="my-6 flex flex-col">
-    <div class="flex flex-row justify-center shrink-0 gap-4">
-    {% for collection in section.settings.collection_list %}
-        {% assign column_index = forloop.index | modulo: section.settings.items_per_row %}
+<div class="collection-list">
 
-        {% render 'collection-list-card', featured_collection: collection %}
+    <!-- Mobile Devices -->
+    <div class="my-6 flex flex-col w-screen overflow-x-scroll hidden">
+        <div class="flex flex-row shrink-0 gap-4">
+        {% for collection in section.settings.collection_list %}
+            {% assign column_index = forloop.index | modulo: section.settings.items_per_row %}
 
-        {% if column_index == 0 %}
+            {% render "collection-list-card", featured_collection: collection %}
+
+        {% else %}
+            {% for _ in (1..section.settings.items_per_row) %}
+                {% capture placeholder_id %}{% cycle "small": "collection-1", "collection-2", "collection-3", "collection-4", "collection-5", "collection-6" %}{% endcapture %}
+
+                {% render "collection-list-card-placeholder", placeholder_id: placeholder_id %}
+            {% endfor %}
+        {% endfor %}
+        </div>
     </div>
-    <div class="flex flex-row justify-center shrink-0 gap-4">
-        {% endif %}
-    {% endfor %}
+
+    <!-- Large Devices -->
+    <div class="my-6 flex flex-col w-screen">
+        <div class="flex flex-row justify-center shrink-0 gap-4">
+        {% for collection in section.settings.collection_list %}
+            {% assign column_index = forloop.index | modulo: section.settings.items_per_row %}
+
+            {% render "collection-list-card", featured_collection: collection %}
+
+            {% if column_index == 0 %}
+        </div>
+        <div class="flex flex-row justify-center shrink-0 gap-4">
+            {% endif %}
+        {% else %}
+            {% for _ in (1..section.settings.items_per_row) %}
+                {% capture placeholder_id %}{% cycle "large": "collection-1", "collection-2", "collection-3", "collection-4", "collection-5", "collection-6" %}{% endcapture %}
+
+                {% render "collection-list-card-placeholder", placeholder_id: placeholder_id %}
+            {% endfor %}
+        {% endfor %}
+        </div>
     </div>
+
 </div>
-
 
 {% schema %}
 {
