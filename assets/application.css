@@ -2,6 +2,10 @@
     clip-path: circle(40%);
 }
 
-.banner-max-height {
-    height: calc(100vh - 76px);
+.banner-height-large {
+    height: calc(85vh - 76px);
+}
+
+.banner-height-small {
+    height: calc(50vh - 76px);
 }

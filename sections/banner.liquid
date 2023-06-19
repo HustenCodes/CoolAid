@@ -1,20 +1,121 @@
 {% assign overlay_opacity = section.settings.overlay_alpha | divided_by: 100.0 %}
 
-<div class="mb-3 w-5/6 m-auto">
-    {% for block in section.blocks %}
-        {% if block.type == "slide"%}
-            <div class="banner-max-height overflow-hidden flex items-center justify-center relative z-0">
-                <img 
-                    class = "w-full z-10"
-                    src = "{{ block.settings.image | image_url: width: 2048 }}"
-                    alt = "{{ block.settings.image.alt }}"
-                    loading="lazy"
-                >
-                <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
-            </div>
-        {% endif %}
-    {% endfor %}
-    
+<!-- Mobile Devices -->
+<div class="mb-3 w-full m-auto sm:block md:hidden">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                {% if block.type == "slide"%}
+                    <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                        <div class="banner-height-small overflow-hidden flex items-center justify-center relative z-0">
+                            <img 
+                                class = "w-5/6 z-10"
+                                src = "{{ block.settings.image | image_url: width: 2048 }}"
+                                alt = "{{ block.settings.image.alt }}"
+                                loading="lazy"
+                            >
+                            <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                            <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-2xl">
+                                <div>
+                                    <h1 class="text-4xl">{{ block.settings.overlay_title }}<h1>
+                                    <div class="text-lg">{{ block.settings.overlay_desc }}</div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                    <div class="banner-height-small overflow-hidden flex items-center justify-center relative z-0">
+                        {{ "lifestyle-1" | placeholder_svg_tag: "w-5/6 z-10" }}
+                        <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                        <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-2xl">
+                            <div>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-lg">Description</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                    <div class="banner-height-small overflow-hidden flex items-center justify-center relative z-0">
+                        {{ "lifestyle-2" | placeholder_svg_tag: "w-5/6 z-10" }}
+                        <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                        <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50">
+                            <div>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-lg">Description</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+<!-- Normal Devices -->
+<div class="mb-3 w-full m-auto hidden md:block">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                {% if block.type == "slide"%}
+                    <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                        <div class="banner-height-large overflow-hidden flex items-center justify-center relative z-0">
+                            <img 
+                                class = "w-5/6 z-10"
+                                src = "{{ block.settings.image | image_url: width: 2048 }}"
+                                alt = "{{ block.settings.image.alt }}"
+                                loading="lazy"
+                            >
+                            <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                            <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-2xl">
+                                <div>
+                                    <h1 class="text-4xl">{{ block.settings.overlay_title }}<h1>
+                                    <div class="text-lg">{{ block.settings.overlay_desc }}</div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                    <div class="banner-height-large overflow-hidden flex items-center justify-center relative z-0">
+                        {{ "lifestyle-1" | placeholder_svg_tag: "w-5/6 z-10" }}
+                        <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                        <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-2xl">
+                            <div>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-lg">Description</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-slide"  {{ block.shopify_attributes }}>
+                    <div class="banner-height-large overflow-hidden flex items-center justify-center relative z-0">
+                        {{ "lifestyle-2" | placeholder_svg_tag: "w-5/6 z-10" }}
+                        <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
+                        <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50">
+                            <div>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-lg">Description</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
 </div>
 
 {% schema %}
@@ -47,11 +148,23 @@
             "name": "Slide",
             "type": "slide",
             "settings": [
-            {
-                "type": "image_picker",
-                "id": "image",
-                "label": "Image To Show"
-            }
+                {
+                    "type": "text",
+                    "id": "overlay_title",
+                    "label": "Title",
+                    "default": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "overlay_desc",
+                    "label": "Description",
+                    "default": "<p>Description</p>"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image To Show"
+                }
             ]
         }
     ],
