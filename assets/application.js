@@ -50,14 +50,14 @@ function init_banner_swiper(name, secondary_name = "swiper") {
     autoscroll_duration = 5
 
     banner_swiper_element = document.getElementById(name)
-    if (!banner_swiper_element) { return }
 
-    if (banner_swiper_element.dataset.autoscroll.valueOf()) {
+    if (!banner_swiper_element) { return }
+    if (banner_swiper_element.dataset.autoscroll == null) { return init_swiper("#" + name, "." + secondary_name, "horizontal") }
+
+    if (banner_swiper_element.dataset.autoscroll.toLowerCase() == "true") {
         autoscroll_banner = true
         autoscroll_duration = banner_swiper_element.dataset.autoscroll_duration.valueOf() * 1000
     }
-
-    console.log(autoscroll_banner, autoscroll_duration)
 
     if (autoscroll_banner) {
         return init_swiper("#" + name, "." + secondary_name, "horizontal", {
