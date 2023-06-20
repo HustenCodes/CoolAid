@@ -17,8 +17,8 @@
                             <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
                             <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-4xl">
                                 <div>
-                                    <h1 class="text-4xl">{{ block.settings.overlay_title }}<h1>
-                                    <div class="text-lg">{{ block.settings.overlay_desc }}</div>
+                                    <h1 class="text-2xl">{{ block.settings.overlay_title }}<h1>
+                                    <div class="text-sm">{{ block.settings.overlay_desc }}</div>
                                 </div>
                             </div> 
                         </div>
@@ -31,8 +31,8 @@
                         <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
                         <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50 text-4xl">
                             <div>
-                                <h1 class="text-4xl">Title<h1>
-                                <p class="text-lg">Description</p>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-sm">Description</p>
                             </div>
                         </div> 
                     </div>
@@ -43,8 +43,8 @@
                         <div class="w-full h-full absolute z-20 top-0" style="background: {{ section.settings.overlay_color }}; opacity: {{ overlay_opacity }}"></div>
                         <div class="w-full h-full absolute z-30 top-0 bg-transparent flex items-center justify-center text-center text-slate-50">
                             <div>
-                                <h1 class="text-4xl">Title<h1>
-                                <p class="text-lg">Description</p>
+                                <h1 class="text-2xl">Title<h1>
+                                <p class="text-sm">Description</p>
                             </div>
                         </div> 
                     </div>
@@ -54,8 +54,8 @@
         
         <div class="swiper-pagination" style="top: 50%"></div> <!-- Fix positioning of pagenation -->
 
-        <div class="swiper-button-prev text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons-->
-        <div class="swiper-button-next text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons-->
+        <div class="swiper-button-prev shrink-nav text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons AND shrink them as well -->
+        <div class="swiper-button-next shrink-nav text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons AND shrink them as well -->
     </div>
 </div>
 

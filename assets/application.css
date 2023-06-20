@@ -1,4 +1,4 @@
-/* Varables */
+/* Variables */
 :root {
     --swiper-theme-color: black;
 }
@@ -25,6 +25,10 @@ a:hover, a:active {
 
 .banner-height-small {
     height: calc(50vh - 76px);
+}
+
+.shrink-nav:after { /* Navigation Buttons */
+    font-size: 36px; 
 }
 
 /* IDK? */
