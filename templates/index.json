@@ -35,8 +35,8 @@
       ],
       "settings": {
         "overlay_color": "#000000",
-        "overlay_alpha": 75,
-        "autoscroll": false,
+        "overlay_alpha": 66,
+        "autoscroll": true,
         "autoscroll_duration": 5
       }
     },
