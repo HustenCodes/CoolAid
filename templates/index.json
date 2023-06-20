@@ -36,7 +36,7 @@
       "settings": {
         "overlay_color": "#000000",
         "overlay_alpha": 66,
-        "autoscroll": true,
+        "autoscroll": false,
         "autoscroll_duration": 5
       }
     },
