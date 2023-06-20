@@ -6,7 +6,7 @@
         "925ddc9f-21d2-4d82-86e3-850848c19262": {
           "type": "slide",
           "settings": {
-            "overlay_title": "We Have Memory",
+            "overlay_title": "We Have MEMORY!",
             "overlay_desc": "<p>Click <a href=\"\/collections\/memory\" title=\"All Our Memory\">HERE<\/a> to see our Catalog of Memory<\/p>",
             "image": "shopify:\/\/shop_images\/1024_2.png"
           }
@@ -14,15 +14,15 @@
         "52984a08-31c3-4fa6-9756-857382f4f52c": {
           "type": "slide",
           "settings": {
-            "overlay_title": "",
-            "overlay_desc": "",
+            "overlay_title": "We Have GPUS!",
+            "overlay_desc": "<p>Click <a href=\"\/collections\/memory\" title=\"All Our Memory\">HERE<\/a> to see our Catalog of GPUs<\/p>",
             "image": "shopify:\/\/shop_images\/71-djDvKjfL._AC_SX679.jpg"
           }
         },
         "2fcb8627-01df-4cb3-ada8-253ca1ae3d04": {
           "type": "slide",
           "settings": {
-            "overlay_title": "",
+            "overlay_title": "We Have CPUS!",
             "overlay_desc": "",
             "image": "shopify:\/\/shop_images\/19-113-792-03.png"
           }
@@ -47,7 +47,7 @@
           "memory",
           "motherboards",
           "ssds",
-          "frontpage"
+          "gpus"
         ],
         "items_per_row": 4
       }
