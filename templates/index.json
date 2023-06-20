@@ -23,7 +23,7 @@
           "type": "slide",
           "settings": {
             "overlay_title": "We Have CPUS!",
-            "overlay_desc": "",
+            "overlay_desc": "<p>Click <a href=\"\/collections\/memory\" title=\"All Our Memory\">HERE<\/a> to see our Catalog of CPUs<\/p>",
             "image": "shopify:\/\/shop_images\/19-113-792-03.png"
           }
         }
@@ -49,7 +49,8 @@
           "ssds",
           "gpus"
         ],
-        "items_per_row": 4
+        "items_per_row": 4,
+        "show_names": false
       }
     },
     "featured-collection": {
