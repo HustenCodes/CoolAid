@@ -1,19 +1,33 @@
-[x-cloak] { 
-    display: none !important;
-}
-
+/* Varables */
 :root {
     --swiper-theme-color: black;
 }
 
+/* Links */
+a { 
+    color: rgb(56 189 248); /* sky-400 */
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+/* Collection Lists */
 .collection-card-clip {
     clip-path: circle(40%);
 }
 
+/* Banners */
 .banner-height-large {
     height: calc(85vh - 76px);
 }
 
 .banner-height-small {
     height: calc(50vh - 76px);
+}
+
+/* IDK? */
+[x-cloak] { 
+    display: none !important;
 }
