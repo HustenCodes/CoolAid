@@ -1,8 +1,8 @@
 {% assign overlay_opacity = section.settings.overlay_alpha | divided_by: 100.0 %}
 
 <!-- Mobile Devices -->
-<div class="mb-3 w-full m-auto sm:block md:hidden">
-    <div class="swiper">
+<div class="mb-3 w-full m-auto bg-white sm:block md:hidden">
+    <div id="banner-swiper1" data-autoscroll="{{ section.settings.autoscroll }}" data-autoscroll_duration="{{ section.settings.autoscroll_duration }}">
         <div class="swiper-wrapper">
             {% for block in section.blocks %}
                 {% if block.type == "slide"%}
@@ -51,17 +51,17 @@
                 </div>
             {% endfor %}
         </div>
+        
+        <div class="swiper-pagination" style="top: 50%"></div> <!-- Fix positioning of pagenation -->
 
-        <div class="swiper-pagination"></div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons-->
+        <div class="swiper-button-next text-gray-300 top-1/3"></div> <!-- Fix positioning of navagation buttons-->
     </div>
 </div>
 
 <!-- Normal Devices -->
-<div class="mb-3 w-full m-auto hidden md:block">
-    <div class="swiper">
+<div class="mb-3 w-full m-auto bg-white hidden md:block">
+    <div id="banner-swiper2" data-autoscroll="{{ section.settings.autoscroll }}" data-autoscroll_duration="{{ section.settings.autoscroll_duration }}">
         <div class="swiper-wrapper">
             {% for block in section.blocks %}
                 {% if block.type == "slide"%}
@@ -111,10 +111,10 @@
             {% endfor %}
         </div>
 
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" style="top: 85%"></div> <!-- Fix positioning of pagenation -->
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev text-gray-300"></div>
+        <div class="swiper-button-next text-gray-300"></div>
     </div>
 </div>
 
@@ -141,6 +141,12 @@
             "id": "autoscroll",
             "label": "Automaticly Scroll Banner",
             "default": false
+        },
+        {
+            "type": "number",
+            "id": "autoscroll_duration",
+            "label": "Autoscroll Speed in Seconds",
+            "default": 5
         }
     ],
     "blocks": [
