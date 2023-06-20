@@ -1,5 +1,5 @@
 <div> <!-- Fix for overflow bug -->
-    <div class="w-60 h-80 overflow-hidden">
+    <div class="w-60 h-80 overflow-hidden flex flex-col items-center justify-center">
         <a href="{{ featured_collection.url }}" class="h-60 bg-white overflow-hidden collection-card-clip flex items-center justify-center">
             <img 
                 class="w-1/2 m-auto object-cover"
@@ -10,8 +10,10 @@
             >
         </a>
 
-        <a href="{{ featured_collection.url }}" class="text-gray-700 h-12">
-            <p class="text-center">{{ featured_collection.title }}</p>
-        </a>
+        {% if show_names %}
+            <a href="{{ featured_collection.url }}" class="text-gray-700 h-12">
+                <p class="text-center">{{ featured_collection.title }}</p>
+            </a>
+        {% endif %}
     </div>
 </div>
