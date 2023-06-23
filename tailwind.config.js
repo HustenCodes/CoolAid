@@ -6,7 +6,10 @@ module.exports = {
     './templates/*.liquid'
   ],
   theme: {
-    extend: {},
+    minWidth: {
+      '128': '32rem',
+      'review-screen': "calc(100vw - 80px)"
+    }
   },
   plugins: [],
 }

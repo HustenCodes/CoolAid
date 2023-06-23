@@ -1,0 +1,43 @@
+<div class="p-3 min-w-review-screen md:min-w-128 h-auto flex flex-row bg-white border-solid border-2 border-gray-200 my-1 overflow-hidden">
+    <div class="h-16 w-16 mr-4 bg-white rounded-full border-solid border-2 border-gray-500 overflow-hidden relative">
+        {% if review.profile %}
+            <img 
+                class="w-full h-full m-auto object-cover"
+                src="{{ review.profile | image_url: width: 360, height: 360 }}"
+                alt="{{ review.profile.alt }}"
+                width="360" height="360"
+                loading="lazy"
+            >
+        {% else %}
+            {{ 'image' | placeholder_svg_tag: "m-auto object-cover absolute placeholder-profile" }}
+        {% endif %}
+    </div>
+    <div>
+        {% if setting.show_starcount %}
+            <div class="w-36 relative font-semibold text-lg"> <!-- Star Count -->
+                {% render "icon-stars-inner", class: "text-yellow-300 z-10" %}
+                <div class="w-full h-8 z-20 bg-white absolute star-offset" style="width: {{ review.star_count | times: 20 | minus: 100 | abs }}%"></div>
+                {% render "icon-stars-outline", class: "z-30 absolute star-offset" %}
+                <p class="absolute star-offset author-offset"> &#8212; {{ review.star_count }} Stars</p>
+            </div>
+        {% endif %}
+
+        {% if setting.show_title %}
+            <h3 class="my-2 mx-5 font-bold text-2xl">{{ review.title }}</h3> <!-- Title Text -->
+        {% endif %}
+
+        <div class="mx-3 w-full"> <!-- Review Content -->
+            <span class="italic text-3xl font-light font-serif">"</span>
+            <span class="ml-1 relative bottom-1.5">{{ review.content }}</span>
+            <span class="italic text-3xl font-light font-serif">"</span>
+
+            {% if setting.show_author %}
+                {% if review.author == "" %}
+                    <span class="font-semibold text-xs ml-2 relative bottom-2">&#8212; Anonymous</span> <!-- Author -->
+                {% else %}
+                    <span class="font-semibold text-xs ml-2 relative bottom-2">&#8212; {{ review.author }}</span> <!-- Author -->
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

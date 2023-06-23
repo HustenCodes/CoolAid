@@ -4,7 +4,7 @@
 
 <!-- Mobile Devices -->
 <div class="my-6 sm:block md:hidden">
-    <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
+    <h1 class="text-center text-3xl font-medium">{{ section.settings.title }}</h1>
 
     {% if section.settings.featured_collection.products.size <= 1 %}
         <div class="flex flex-row justify-center shrink-0 gap-4">
@@ -51,7 +51,7 @@
 
 <!-- Normal Devices -->
 <div class="my-6 hidden md:block">
-    <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
+    <h1 class="text-center text-3xl font-medium">{{ section.settings.title }}</h1>
 
     {% if section.settings.featured_collection.products.size <= section.settings.number_of_products_per_page %}
         <div class="flex flex-row justify-center shrink-0 gap-4">

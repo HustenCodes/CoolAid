@@ -1,0 +1,95 @@
+<div class="w-full flex flex-col items-center my-8 review-list">
+    <h1 class="text-3xl font-medium mb-4">{{ section.settings.title }}</h1>
+
+    <!-- Large Devices -->
+    <div class="w-full flex flex-row justify-center">
+        {% for block in section.blocks %}
+            {% if block.type == "review" %}
+                {% render "rewiew-card", review: block.settings, setting: section.settings %}
+            {% endif %}
+        {% endfor%}
+    </div>
+
+    <!-- Mobile Devices -->
+    <div class="w-full flex flex-row overflow-x-scroll hidden">
+        {% for block in section.blocks %}
+            {% if block.type == "review" %}
+                {% render "rewiew-card", review: block.settings, setting: section.settings %}
+            {% endif %}
+        {% endfor%}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Review List",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Reviews"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_starcount",
+            "label": "Show Stars",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_title",
+            "label": "Show Title",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_author",
+            "label": "Show Author",
+            "default": true
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Review",
+            "type": "review",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "profile",
+                    "label": "Author's Picture"
+                },
+                {
+                    "type": "range",
+                    "id": "star_count",
+                    "label": "Number of Stars",
+                    "default": 0,
+                    "min": 0,
+                    "max": 5,
+                    "step": 0.5
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "author",
+                    "label": "Author"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "Review Content"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Review List"
+        }
+    ]
+}
+{% endschema %}

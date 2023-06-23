@@ -1,8 +1,8 @@
 <div> <!-- Fix for overflow bug -->
     <div class="w-60 h-80 overflow-hidden flex flex-col items-center justify-center">
-        <a href="{{ featured_collection.url }}" class="h-60 bg-white overflow-hidden collection-card-clip flex items-center justify-center">
+        <a href="{{ featured_collection.url }}" class="h-48 w-48 bg-white overflow-hidden rounded-full flex items-center justify-center">
             <img 
-                class="w-1/2 m-auto object-cover"
+                class="w-3/5 m-auto object-cover"
                 src="{{ featured_collection.featured_image | image_url: width: 240 }}"
                 alt="{{ featured_collection.featured_image.alt }}"
                 width="240" height="240"
