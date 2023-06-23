@@ -984,10 +984,6 @@ video {
   width: 100vw;
 }
 
-.min-w-review-screen {
-  min-width: calc(100vw - 80px);
-}
-
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1716,6 +1712,20 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.review-sizing {
+  min-width: calc(100vw - 80px);
+  max-width: calc(100vw - 80px);
+  @media (min-width: 768px) {
+    min-width: 32rem;
+
+    /* w-128 */
+
+    max-width: 32rem;
+
+    /* w-128 */
+  }
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1883,10 +1893,6 @@ video {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:min-w-128 {
-    min-width: 32rem;
   }
 
   .md\:max-w-lg {
