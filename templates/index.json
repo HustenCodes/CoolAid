@@ -68,6 +68,30 @@
         "number_of_products_per_page": 4
       }
     },
+    "d57b0246-0875-4a4c-81d9-adbf41ae3789": {
+      "type": "review-list",
+      "blocks": {
+        "c0209c25-394f-4311-9bf7-01384791e464": {
+          "type": "review",
+          "settings": {
+            "profile": "shopify:\/\/shop_images\/71ZANS0SSDL.__AC_SX300_SY300_QL70_FMwebp.webp",
+            "star_count": 4.5,
+            "title": "Good Buy!",
+            "author": "",
+            "content": "I Bought to Rysen 9 and it works like a charm!"
+          }
+        }
+      },
+      "block_order": [
+        "c0209c25-394f-4311-9bf7-01384791e464"
+      ],
+      "settings": {
+        "title": "Reviews",
+        "show_starcount": true,
+        "show_title": true,
+        "show_author": true
+      }
+    },
     "f88392a5-5ede-4f0a-bb64-38dc9b06747f": {
       "type": "contact-form",
       "settings": {
@@ -79,6 +103,7 @@
     "8c415b5a-4603-4eb3-bbd0-81054d4b2eb6",
     "a33e5d6a-0df4-4036-8613-f1771c8dc7a8",
     "featured-collection",
+    "d57b0246-0875-4a4c-81d9-adbf41ae3789",
     "f88392a5-5ede-4f0a-bb64-38dc9b06747f"
   ]
 }
