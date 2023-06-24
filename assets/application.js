@@ -20,15 +20,15 @@ function switch_if_overflowing(before_overflow_element, after_overflow_element, 
     let old_display = before_overflow_element.style.display
     
     // Default to the before element
-    after_overflow_element.style.display = display_property // hidden elements cant overflow
+    before_overflow_element.style.display = display_property // hidden elements cant overflow
     if (should_change_display) {
-        before_overflow_element.style.display = "none"
+        after_overflow_element.style.display = "none"
     }
     // Check how if new screen size causes overflow
-    let is_small = is_overflowing(after_overflow_element)
+    let is_small = is_overflowing(before_overflow_element)
 
     if (!should_change_display) { // Some times we don't want to change stuff!
-        after_overflow_element.style.display = old_display
+        before_overflow_element.style.display = old_display
     }
 
     // Check if elements are overflowing so we can switch to the new one
