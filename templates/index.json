@@ -80,10 +80,21 @@
             "author": "",
             "content": "I Bought to Rysen 9 and it works like a charm!"
           }
+        },
+        "af529ea5-6375-4474-8407-75eafcde0112": {
+          "type": "review",
+          "settings": {
+            "profile": "shopify:\/\/shop_images\/ktc-product-memory-renegade-pro-ddr5-rdimm-1-lg.jpg",
+            "star_count": 3.5,
+            "title": "Broken",
+            "author": "KingstonLover52",
+            "content": "The product was shipped in tact but I broke it when trying to install."
+          }
         }
       },
       "block_order": [
-        "c0209c25-394f-4311-9bf7-01384791e464"
+        "c0209c25-394f-4311-9bf7-01384791e464",
+        "af529ea5-6375-4474-8407-75eafcde0112"
       ],
       "settings": {
         "title": "Reviews",
