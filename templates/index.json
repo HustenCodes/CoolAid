@@ -47,7 +47,11 @@
           "memory",
           "motherboards",
           "ssds",
-          "gpus"
+          "gpus",
+          "all-our-monitors",
+          "all-our-mouse",
+          "all-our-keyboards",
+          "all-our-cpu"
         ],
         "items_per_row": 4,
         "show_names": false
