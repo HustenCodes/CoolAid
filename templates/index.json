@@ -34,7 +34,7 @@
         "2fcb8627-01df-4cb3-ada8-253ca1ae3d04"
       ],
       "settings": {
-        "overlay_color": "#000000",
+        "overlay_color": "radial-gradient(rgba(0, 0, 0, 1) 5%, rgba(255, 251, 241, 1) 100%)",
         "overlay_alpha": 66,
         "autoscroll": true,
         "autoscroll_duration": 5
@@ -47,9 +47,7 @@
           "memory",
           "motherboards",
           "ssds",
-          "gpus",
           "all-our-monitors",
-          "all-our-mouse",
           "all-our-keyboards",
           "all-our-cpu"
         ],
@@ -65,7 +63,7 @@
       "settings": {
         "title": "Featured Collection",
         "featured_collection": "frontpage",
-        "number_of_products_per_page": 4
+        "number_of_products_per_page": 2
       }
     },
     "d57b0246-0875-4a4c-81d9-adbf41ae3789": {
